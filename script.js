@@ -1,5 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- HÀM HIỆU ỨNG GÕ PHÍM VÀ XOAY VÒNG (MỚI) ---
+
+// Hàm trợ giúp để tạm dừng (pause)
+const pause = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+// Hàm để gõ chữ
+async function type(element, text, speed = 100) {
+    const cursor = element.nextElementSibling;
+    if (cursor) cursor.style.display = 'none'; // Ẩn con trỏ khi gõ
+
+    for (let i = 0; i < text.length; i++) {
+        element.innerHTML += text[i];
+        await pause(speed);
+    }
+
+    if (cursor) cursor.style.display = 'inline-block'; // Hiện lại con trỏ
+}
+
+// Hàm để xóa chữ
+async function deleteText(element, speed = 50) {
+    const cursor = element.nextElementSibling;
+    if (cursor) cursor.style.display = 'none'; // Ẩn con trỏ khi xóa
+
+    const text = element.innerHTML;
+    for (let i = text.length - 1; i >= 0; i--) {
+        element.innerHTML = text.substring(0, i);
+        await pause(speed);
+    }
+
+    if (cursor) cursor.style.display = 'inline-block'; // Hiện lại con trỏ
+}
+
+// Hàm chính điều khiển vòng lặp
+async function typeDeleteLoop(element) {
+    // Lấy danh sách từ data attributes và tách ra thành mảng
+    const titlesVI = (element.getAttribute('data-vi') || '').split(',');
+    const titlesEN = (element.getAttribute('data-en') || '').split(',');
+    const cursor = element.nextElementSibling;
+
+    // Vòng lặp vô tận
+    while (true) {
+        // Kiểm tra ngôn ngữ hiện tại
+        const lang = document.documentElement.lang || 'vi';
+        const currentTitles = (lang === 'vi') ? titlesVI : titlesEN;
+
+        // Lặp qua từng chức vụ
+        for (const title of currentTitles) {
+            if (!title) continue; // Bỏ qua nếu rỗng
+
+            await type(element, title, 100); // Gõ chữ
+            await pause(2000);               // Dừng 2 giây
+            await deleteText(element, 50);  // Xóa chữ
+            await pause(500);                // Dừng 0.5 giây trước khi gõ chữ tiếp
+        }
+    }
+}
+
     // --- 1. Dark/Light Mode ---
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
@@ -63,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Cập nhật trạng thái 'active' cho nút
             langButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
+
         });
     });
 
@@ -71,5 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
     particlesJS.load('particles-js', 'particles.json', function() {
         console.log('particles.js config loaded');
     });
+    // ... (phần code particlesJS.load) ...
 
+// --- MỚI: Khởi chạy VÒNG LẶP gõ phím ---
+const typingElement = document.querySelector('.typing-text');
+if (typingElement) {
+    typeDeleteLoop(typingElement);
+}
 });

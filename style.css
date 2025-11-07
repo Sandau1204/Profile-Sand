@@ -1,7 +1,7 @@
 /* --- Biến màu (CSS Variables) --- */
 :root {
     /* Light Mode */
-    --bg-color: #f4f7f6;
+    --bg-color: #fdfdfd;
     --text-color: #333;
     --card-bg: #ffffff;
     --primary-color: #06c59f;
@@ -391,4 +391,31 @@ html[lang="en"] .vi {
     .contact-wrapper {
         grid-template-columns: 1fr;
     }
+}
+/* --- CSS MỚI: Hiệu ứng Gõ phím (Typing Effect) --- */
+
+/* Điều chỉnh thẻ p.subtitle để căn chỉnh con trỏ */
+#hero .subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Đặt chiều cao tối thiểu để trang không bị "giật" khi chữ xuất hiện */
+    min-height: 2.4rem; 
+}
+
+
+
+
+/* Ẩn con trỏ đi nếu văn bản trống (khi đang đổi ngôn ngữ) */
+.typing-text:empty + .cursor {
+    display: none;
+}
+
+/* Định nghĩa animation 'blink' */
+@keyframes blink {
+    0% { background-color: var(--text-color); }
+    49% { background-color: var(--text-color); }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100% { background-color: var(--text-color); }
 }
