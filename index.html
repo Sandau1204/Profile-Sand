@@ -1,202 +1,191 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
+<html lang="vi"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uông Sỹ Thắng Anh - Fullstack Developer</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 <body>
 
     <div id="particles-js"></div>
 
-    <header class="header">
-        <div class="container">
+    <header>
+        <nav class="container">
             <a href="#" class="logo">Sand</a>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="#hero">Trang chủ</a></li>
-                    <li><a href="#about">Giới thiệu</a></li>
-                    <li><a href="#skills">Kỹ năng</a></li>
-                    <li><a href="#projects">Dự án</a></li>
-                    <li><a href="#contact">Liên hệ</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+            <ul class="nav-menu">
+                <li><a href="#hero"><span class="vi">Trang chủ</span><span class="en">Home</span></a></li>
+                <li><a href="#about"><span class="vi">Giới thiệu</span><span class="en">About</span></a></li>
+                <li><a href="#skills"><span class="vi">Kỹ năng</span><span class="en">Skills</span></a></li>
+                <li><a href="#projects"><span class="vi">Dự án</span><span class="en">Projects</span></a></li>
+                <li><a href="#contact"><span class="vi">Liên hệ</span><span class="en">Contact</span></a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="lang-toggle-vi" class="lang-btn active" data-lang="vi">VI</button>
+                <button id="lang-toggle-en" class="lang-btn" data-lang="en">EN</button>
+                
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <button id="mobile-menu-toggle" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
-        </div>
+        </nav>
     </header>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <h1>Uông Sỹ Thắng Anh</h1>
-                <p class="subtitle" id="typing-subtitle"></p>
-                <div class="social-links">
-                    <a href="https://github.com/Sandau1204" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/s%E1%BB%B9-th%E1%BA%AFng-anh-u%C3%B4ng-530113332/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.facebook.com/Sandau1204" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                </div>
-                <a href="#projects" class="cta-button">Xem dự án của tôi</a>
+        <section id="hero" class="container">
+            <img src="image/Sand.jpg" alt="Ảnh đại diện Uông Sỹ Thắng Anh" class="avatar">
+            <h1>Uông Sỹ Thắng Anh</h1>
+            <p class="subtitle">Fullstack Developer</p>
+            <div class="social-links">
+                <a href="https://github.com/Sandau1204" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/s%E1%BB%B9-th%E1%BA%AFng-anh-u%C3%B4ng-530113332/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/Sandau1204" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href = "https://discord.gg/spBW2PVhNy" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+            
+                
             </div>
         </section>
 
-        <section id="about" class="section container fade-in">
-            <h2 class="section-title">Về tôi</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Chào bạn, tôi là Thắng Anh. Với đam mê mãnh liệt về công nghệ và lập trình, tôi đã và đang trên hành trình chinh phục thế giới Fullstack Development.</p>
-                    <p>Tôi chuyên xây dựng các ứng dụng web hiện đại, từ giao diện người dùng (Frontend) mượt mà với React, Vue cho đến hệ thống máy chủ (Backend) mạnh mẽ với Node.js và C#. Tôi luôn tìm kiếm những giải pháp sáng tạo để giải quyết các vấn đề phức tạp và mang lại trải nghiệm tốt nhất cho người dùng.</p>
-                </div>
-                <div class="about-image">
-                    <img src="image/Sand.jpg" alt="Uông Sỹ Thắng Anh">
-                </div>
+        <section id="about" class="container">
+            <h2><span class="vi">Về tôi</span><span class="en">About Me</span></h2>
+            <div class="vi">
+                <p>Chào bạn, tôi là Thắng Anh. Với niềm đam mê công nghệ và tư duy logic, tôi đã chọn con đường trở thành một Fullstack Developer. Tôi chuyên xây dựng các ứng dụng web hiện đại, thông minh và có khả năng mở rộng...</p>
             </div>
+            <div class="en">
+                <p>Hello, I'm Thang Anh. With a passion for technology and logical thinking, I chose the path of a Fullstack Developer. I specialize in building modern, intelligent, and scalable web applications...</p>
+            </div>
+            <a href="your-cv.pdf" download class="btn">
+                <i class="fa-solid fa-download"></i>
+                <span class="vi">Tải CV của tôi</span>
+                <span class="en">Download CV</span>
+            </a>
         </section>
 
-        <section id="skills" class="section container fade-in">
-            <h2 class="section-title">Kỹ năng chuyên môn</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fab fa-js-square skill-icon" style="color: #F7DF1E;"></i>
-                        <h3>JavaScript (ES6+)</h3>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" data-level="90"></div>
-                    </div>
+        <section id="skills" class="container">
+    <h2><span class="vi">Kỹ năng chuyên môn</span><span class="en">My Skills</span></h2>
+    <div class="skills-grid">
+        <div class="skill-item">
+            <h3>Frontend</h3>
+            <div class="skill-bar">
+                <div class="skill-info">
+                    <i class="devicon-react-original colored"></i>
+                    <p>React.js</p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fab fa-react skill-icon" style="color: #61DAFB;"></i>
-                        <h3>React.js</h3>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" data-level="85"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fab fa-node-js skill-icon" style="color: #339933;"></i>
-                        <h3>Node.js</h3>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" data-level="80"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fab fa-html5 skill-icon" style="color: #E34F26;"></i>
-                        <h3>HTML5</h3>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" data-level="95"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fab fa-css3-alt skill-icon" style="color: #1572B6;"></i>
-                        <h3>CSS3 & Sass</h3>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" data-level="90"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <i class="fas fa-database skill-icon" style="color: #4DB33D;"></i>
-                        <h3>SQL & NoSQL</h3>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" data-level="75"></div>
-                    </div>
-                </div>
+                <div class="bar"><span style="width: 90%;">90%</span></div>
             </div>
-        </section>
+            <div class="skill-bar">
+                <div class="skill-info">
+                    <i class="devicon-vuejs-plain colored"></i>
+                    <p>Vue.js</p>
+                </div>
+                <div class="bar"><span style="width: 75%;">75%</span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-info">
+                    <i class="devicon-html5-plain colored"></i>
+                    <i class="devicon-css3-plain colored"></i>
+                    <p>HTML5 & CSS3</p>
+                </div>
+                <div class="bar"><span style="width: 95%;">95%</span></div>
+            </div>
+        </div>
+        
+        <div class="skill-item">
+            <h3>Backend</h3>
+            <div class="skill-bar">
+                <div class="skill-info">
+                    <i class="devicon-nodejs-plain-wordmark colored"></i>
+                    <p>Node.js (Express)</p>
+                </div>
+                <div class="bar"><span style="width: 85%;">85%</span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-info">
+                    <i class="devicon-django-plain colored"></i>
+                    <p>Python (Django)</p>
+                </div>
+                <div class="bar"><span style="width: 70%;">70%</span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-info">
+                    <i class="devicon-mysql-plain-wordmark colored"></i>
+                    <i class="devicon-mongodb-plain colored"></i>
+                    <p>Database (SQL/NoSQL)</p>
+                </div>
+                <div class="bar"><span style="width: 80%;">80%</span></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <section id="projects" class="section container fade-in">
-            <h2 class="section-title">Dự án nổi bật</h2>
+        <section id="projects" class="container">
+            <h2><span class="vi">Dự án nổi bật</span><span class="en">Featured Projects</span></h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/1A1A2E/00FFCC?text=Project+Alpha" alt="Project Alpha">
-                    </div>
-                    <div class="project-info">
-                        <h3>Dự án demo1</h3>
-                        <p>Một ứng dụng quản lý công việc sáng tạo sử dụng React và Firebase.</p>
-                        <div class="tech-stack">
-                            <span>React</span>
-                            <span>Firebase</span>
-                            <span>Sass</span>
-                        </div>
-                        <a href="#" class="project-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                    <img src="https://via.placeholder.com/400x250" alt="Project 1">
+                    <h3><span class="vi">Dự án A</span><span class="en">Project A</span></h3>
+                    <p><span class="vi">Mô tả ngắn về dự án A...</span><span class="en">A short description of project A...</span></p>
+                    <div class="project-links">
+                        <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+                        <a href="#"><i class="fa-solid fa-globe"></i> Live Demo</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/1A1A2E/00FFCC?text=Project+Beta" alt="Project Beta">
-                    </div>
-                    <div class="project-info">
-                        <h3>Dự án demo2</h3>
-                        <p>Hệ thống API backend cho ứng dụng e-commerce với Node.js, Express và MongoDB.</p>
-                        <div class="tech-stack">
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>JWT</span>
-                        </div>
-                        <a href="#" class="project-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/1A1A2E/00FFCC?text=Project+Gamma" alt="Project Gamma">
-                    </div>
-                    <div class="project-info">
-                        <h3>Dự án demo3</h3>
-                        <p>Website profile cá nhân phiên bản v1, tập trung vào hiệu ứng 3D với Three.js.</p>
-                        <div class="tech-stack">
-                            <span>Three.js</span>
-                            <span>HTML5</span>
-                            <span>CSS</span>
-                        </div>
-                        <a href="#" class="project-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                    <img src="https://via.placeholder.com/400x250" alt="Project 2">
+                    <h3><span class="vi">Dự án B</span><span class="en">Project B</span></h3>
+                    <p><span class="vi">Mô tả ngắn về dự án B...</span><span class="en">A short description of project B...</span></p>
+                    <div class="project-links">
+                        <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+                        <a href="#"><i class="fa-solid fa-globe"></i> Live Demo</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section container fade-in">
-            <h2 class="section-title">Liên hệ</h2>
-            <p class="section-subtitle">Hãy kết nối với tôi! Gửi email cho tôi hoặc tìm tôi trên các mạng xã hội.</p>
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Tên của bạn" required>
-                    <input type="email" name="email" placeholder="Email của bạn" required>
+        <section id="contact" class="container">
+            <h2><span class="vi">Liên hệ</span><span class="en">Get in Touch</span></h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3><span class="vi">Thông tin</span><span class="en">Contact Info</span></h3>
+                    <p><i class="fa-solid fa-envelope"></i> uongsythanganh@sandau.site</p>
+                    <p><i class="fa-solid fa-phone"></i> (+84) 359 829 858</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Ho Chi Minh City, Vietnam</p>
                 </div>
-                <textarea name="message" placeholder="Lời nhắn" rows="6" required></textarea>
-                <button type="submit" class="cta-button">Gửi tin nhắn</button>
-            </form>
+                <form id="contact-form" action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+                    <h3><span class="vi">Gửi tin nhắn cho tôi</span><span class="en">Send me a message</span></h3>
+                    <div class="form-group">
+                        <label for="name"><span class="vi">Tên của bạn</span><span class="en">Your Name</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><span class="vi">Email của bạn</span><span class="en">Your Email</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message"><span class="vi">Tin nhắn</span><span class="en">Message</span></label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn"><span class="vi">Gửi đi</span><span class="en">Send</span></button>
+                </form>
+            </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-social">
-                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy; 2025 Sand#1204. Thiết kế và phát triển với <i class="fas fa-heart" style="color: red;"></i>.</p>
-        </div>
+    <footer>
+        <p>&copy; 2025 Sand#1204. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>
