@@ -1,0 +1,550 @@
+/* ===== CSS Variables (Theme) ===== */
+:root {
+    --primary-color: #00ffcc; /* Màu nhấn (cyan công nghệ) */
+    --bg-color: #0a0a1a;      /* Nền dark-blue công nghệ */
+    --card-bg-color: #1a1a2e; /* Nền cho card/header */
+    --text-color: #f0f0f0;    /* Màu chữ chính */
+    --text-secondary: #a0a0c0; /* Màu chữ phụ */
+    --header-height: 70px;
+}
+
+/* ===== Global Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===== Utility Classes ===== */
+.section {
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+/* ===== Particle.js Background ===== */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* ===== Header ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: rgba(26, 26, 46, 0.8); /* Nền bán trong suốt */
+    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.logo:hover {
+    color: var(--primary-color);
+}
+
+.nav-list {
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 30px;
+}
+
+.nav-list a {
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-list a:hover::after,
+.nav-list a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none; /* Ẩn trên desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.hero .subtitle {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.social-links {
+    margin-bottom: 2.5rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* ===== About Section ===== */
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    border-radius: 15px;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.2);
+}
+
+/* ===== Skills Section ===== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-item {
+    background: var(--card-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 204, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 255, 204, 0.15);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.skill-item h3 {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(10, 10, 26, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    width: 0; /* Bắt đầu từ 0, JS sẽ làm nó di chuyển */
+    background: var(--primary-color);
+    border-radius: 5px;
+    transition: width 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ===== Projects Section ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 204, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.2);
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.tech-stack span {
+    display: inline-block;
+    background: var(--bg-color);
+    color: var(--primary-color);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.project-link i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover i {
+    transform: translateX(5px);
+}
+
+/* ===== Contact Section ===== */
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--card-bg-color);
+    border: 1px solid rgba(0, 255, 204, 0.1);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+
+.contact-form textarea {
+    margin-bottom: 1.5rem;
+    resize: vertical;
+}
+
+.contact-form .cta-button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: var(--card-bg-color);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0, 255, 204, 0.1);
+}
+
+.footer-social {
+    margin-bottom: 1rem;
+}
+
+.footer-social a {
+    font-size: 1.3rem;
+    margin: 0 10px;
+    color: var(--text-secondary);
+}
+
+.footer-social a:hover {
+    color: var(--primary-color);
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ===== Scroll & Fade-in Animations ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ===== Responsive Design (Media Queries) ===== */
+
+/* --- Cho máy tính bảng (Tablets) --- */
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-image {
+        margin-top: 2rem;
+    }
+}
+
+/* --- Cho điện thoại (Mobile) --- */
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Mobile Navigation */
+    .menu-toggle {
+        display: block; /* Hiện nút 3 gạch */
+        z-index: 1001;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        /* Ẩn menu đi */
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    .nav.active {
+        transform: translateX(0); /* Hiện menu ra */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-list li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-list a {
+        font-size: 1.5rem;
+    }
+    
+    .form-group {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .form-group input {
+        margin-bottom: 1.5rem;
+    }
+}
+/* ===== Typing Effect Styles ===== */
+.hero .subtitle {
+    /* Đảm bảo nó là inline-block để con trỏ đứng đúng vị trí */
+    display: inline-block; 
+    min-height: 1.8rem; /* Giữ chiều cao ổn định ngay cả khi chưa có chữ */
+}
+
+/* Tạo con trỏ nhấp nháy bằng ::after */
+#typing-subtitle.typing-cursor::after {
+    content: '|';
+    color: var(--primary-color);
+    animation: blink 0.7s infinite;
+    font-weight: 600;
+    margin-left: 5px; /* Khoảng cách giữa chữ và con trỏ */
+}
+
+/* Animation cho con trỏ nhấp nháy */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
