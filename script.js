@@ -1,4 +1,63 @@
+
+// THAY THẾ BẰNG CẤU HÌNH CỦA BẠN (từ Bước 2)
+const firebaseConfig = {
+  apiKey: "AIzaSyCKE0G7ZmtV1wNdaO0dfxmIefZ59qdah1s",
+  authDomain: "sand-profile-1205e.firebaseapp.com",
+  projectId: "sand-profile-1205e",
+  storageBucket: "sand-profile-1205e.firebasestorage.app",
+  messagingSenderId: "669072661949",
+  appId: "1:669072661949:web:c2a0f41b54b5c9939846d4",
+  measurementId: "G-07ZQYCBJH2"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
 document.addEventListener('DOMContentLoaded', () => {
+    // --- MỚI: XỬ LÝ FORM LIÊN HỆ BẰNG FIREBASE ---
+    const contactForm = document.getElementById('contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            // 1. Ngăn chặn form gửi đi theo cách truyền thống
+            e.preventDefault();
+
+            // 2. Lấy dữ liệu từ form
+            const name = contactForm.name.value;
+            const email = contactForm.email.value;
+            const message = contactForm.message.value;
+
+            // 3. Lấy nút submit và hiển thị trạng thái "Đang gửi..."
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="vi">Đang gửi...</span><span class="en">Sending...</span>';
+
+            // 4. Gửi dữ liệu lên Firestore
+            db.collection("contacts").add({
+                name: name,
+                email: email,
+                message: message,
+                timestamp: new Date() // Thêm dấu thời gian
+            })
+            .then(() => {
+                // 5. Gửi thành công
+                console.log("Document successfully written!");
+                // Chuyển hướng đến trang cảm ơn
+                window.location.href = "thank-you.html"; 
+            })
+            .catch((error) => {
+                // 6. Gửi thất bại
+                console.error("Error writing document: ", error);
+                alert("Đã có lỗi xảy ra. Vui lòng thử lại.");
+
+                // Khôi phục nút
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            });
+        });
+    }
 
     // --- HÀM HIỆU ỨNG GÕ PHÍM VÀ XOAY VÒNG (MỚI) ---
 
@@ -132,8 +191,8 @@ async function typeDeleteLoop(element) {
     // ... (phần code particlesJS.load) ...
 
 // --- MỚI: Khởi chạy VÒNG LẶP gõ phím ---
-const typingElement = document.querySelector('.typing-text');
-if (typingElement) {
-    typeDeleteLoop(typingElement);
-}
+    const typingElement = document.querySelector('.typing-text');
+        if (typingElement) {
+        typeDeleteLoop(typingElement);
+    }
 });
