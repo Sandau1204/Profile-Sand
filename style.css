@@ -4,7 +4,7 @@
     --bg-color: #f4f7f6;
     --text-color: #333;
     --card-bg: #ffffff;
-    --primary-color: ##FE4572
+    --primary-color: #06c59f;
     --border-color: #ddd;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -14,7 +14,7 @@ body.dark-mode {
     --bg-color: #1a1a2e;
     --text-color: #e0e0e0;
     --card-bg: #24243e;
-    --primary-color: #DFBE68;
+    --primary-color: #06c59f;
     --border-color: #3a3a5a;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -190,7 +190,7 @@ header .container {
 .btn {
     display: inline-block;
     background: var(--primary-color);
-    color: #fff;
+    color: #ffffff;
     padding: 12px 24px;
     border-radius: 8px;
     font-weight: bold;
@@ -237,7 +237,7 @@ body.dark-mode .btn:hover {
     background-color: var(--primary-color);
     border-radius: 10px;
     line-height: 20px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 0.9rem;
     padding-left: 10px;
     animation: slideIn 1.5s cubic-bezier(0.25, 1, 0.5, 1);
