@@ -35,9 +35,9 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 h1, h2, h3 {
@@ -48,14 +48,21 @@ h1, h2, h3 {
 a {
     color: var(--primary-color);
     text-decoration: none;
+    
 }
 
 img {
     max-width: 100%;
 }
-
 section {
-    padding: 4rem 0;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+
+/* Tăng khoảng cách dưới tiêu đề của mỗi section */
+section h2 {
+    /*margin-bottom: 2.5rem; /* Giá trị mặc định là 1rem */
     text-align: center;
 }
 
@@ -204,44 +211,69 @@ header .container {
 body.dark-mode .btn:hover {
     background-color: #6aaff8;
 }
+/* --- 4. Kỹ năng (Skills) - Cập nhật Thanh tiến trình --- */
 
-/* --- 4. Kỹ năng (Skills) --- */
-.skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    text-align: left;
-}
-
-.skill-item {
+.skills-progress-card {
+    max-width: 900px; /* Giới hạn chiều rộng */
+    margin: 0 auto; /* Căn giữa */
     background: var(--card-bg);
-    padding: 2rem;
+    padding: 2.5rem 3rem;
     border-radius: 10px;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.skill-bar {
+    margin-bottom: 1.5rem;
+}
+.skill-bar:last-child {
+    margin-bottom: 0;
 }
 
 .skill-bar p {
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: left;
 }
+
 .skill-bar .bar {
     width: 100%;
     background-color: var(--border-color);
     border-radius: 10px;
-    height: 20px;
+    height: 20px; /* Làm thanh bar cao hơn một chút */
     overflow: hidden;
-    margin-bottom: 1rem;
 }
+
 .skill-bar .bar span {
     display: block;
     height: 100%;
     background-color: var(--primary-color);
     border-radius: 10px;
-    line-height: 20px;
-    color: rgb(0, 0, 0);
+    line-height: 25px; /* Căn giữa text theo chiều dọc */
+    color: white;
     font-size: 0.9rem;
+    font-weight: bold;
     padding-left: 10px;
+    text-align: left;
+    /* Animation chạy từ trái sang */
     animation: slideIn 1.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
+/* Animation cho thanh bar chạy */
+@keyframes slideIn {
+    from { width: 0 !important; }
+    to { /* width được set inline trong HTML */ }
+}
+
+/* --- Điều chỉnh Responsive cho phần Skills --- */
+@media (max-width: 768px) {
+    .skills-progress-card {
+        padding: 2rem 1.5rem; /* Giảm padding trên mobile */
+    }
+}
+
+
 
 @keyframes slideIn {
     from { width: 0 !important; }
@@ -338,6 +370,7 @@ body.dark-mode .btn:hover {
 footer {
     text-align: center;
     padding: 2rem 0;
+    background-color: var(--card-bg);
     margin-top: 2rem;
     border-top: 1px solid var(--border-color);
     font-size: 0.9rem;
